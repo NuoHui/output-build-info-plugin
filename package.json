@@ -1,0 +1,68 @@
+{
+  "name": "output-build-info-plugin",
+  "version": "0.1.0",
+  "description": "After the project is packaged with an output version information。",
+  "main": "./src/index.js",
+  "scripts": {
+    "lint": "eslint --ext .js ./",
+    "release": "node scripts/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NuoHui/output-build-info-plugin.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "plugin",
+    "webpack",
+    "git"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "author": "NuoHui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NuoHui/output-build-info-plugin/issues"
+  },
+  "homepage": "https://github.com/NuoHui/output-build-info-plugin#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^8.1.7",
+    "nodemon": "^1.19.0",
+    "prettier": "^1.17.1",
+    "standard-version": "^6.0.1"
+  },
+  "dependencies": {
+    "semver": "^6.1.1",
+    "simple-git": "^2.6.0"
+  }
+}
