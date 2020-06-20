@@ -1,5 +1,5 @@
-const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
+const path = require("path");
 
 function resolve(dir) {
   return path.join(__dirname, "..", dir);
@@ -7,6 +7,7 @@ function resolve(dir) {
 
 module.exports = {
   mode: "production",
+  target: "node",
   entry: {
     app: resolve("src/index.js")
   },
@@ -33,7 +34,7 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         cache: true,
-        sourceMap: true,
+        sourceMap: false,
         parallel: true,
         terserOptions: {
           parse: {
