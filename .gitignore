@@ -13,3 +13,4 @@ yarn-error.log*
 *.njsproj
 *.sln
 test/e2e/mock-template-build
+package-lock.json
