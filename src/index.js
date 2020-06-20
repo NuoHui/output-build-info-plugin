@@ -13,7 +13,9 @@ class OutPutBuildInfoWebpackPlugin {
       const isGitRepo = await this.gitUtil.checkIsGitRepository();
       if (isGitRepo) {
         const outputName = this.outputName;
-        const output = {};
+        const output = {
+          env: this.env
+        };
         output.git = {
           last_commit: await this.gitUtil.getLocalGitLatestCommit(),
           current_branch: await this.gitUtil.getLocalCurrentBranch(),
