@@ -1,6 +1,6 @@
 {
   "name": "output-build-info-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "After the project is packaged with an output version information。",
   "main": "./dist/app.js",
   "scripts": {
