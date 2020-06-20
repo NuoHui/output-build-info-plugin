@@ -41,13 +41,12 @@ class GitUtil {
 
   async getLocalGitUserInfo() {
     try {
-      const listConfig = await this.git.listConfig();
-      const configFileList = Array.from(listConfig.files).reverse();
+      const configList = await this.git.listConfig();
       let userInfo = {};
-      configFileList.forEach(item => {
-        const currentConfig = listConfig.values[item];
-        const name = currentConfig["user.name"];
-        const email = currentConfig["user.email"];
+      Array.from(configList.files).forEach(item => {
+        const gitConfig = configList.values[item];
+        const name = gitConfig["user.name"];
+        const email = gitConfig["user.email"];
         if (name && email) {
           userInfo = {
             name: name,
