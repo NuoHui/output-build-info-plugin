@@ -11,6 +11,7 @@ module.exports = {
   },
   plugins: ["prettier"],
   rules: {
-    "no-useless-return": 0
+    "no-useless-return": 0,
+    "prettier/prettier": ["error", { singleQuote: true, semi: false }]
   }
 };
