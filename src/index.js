@@ -25,7 +25,7 @@ class OutPutBuildInfoWebpackPlugin {
             return JSON.stringify(output);
           },
           size() {
-            return output.length;
+            return JSON.stringify(output).length;
           }
         };
       }

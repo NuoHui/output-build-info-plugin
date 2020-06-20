@@ -13,17 +13,31 @@ module.exports = {
   },
   output: {
     path: resolve("dist"),
-    filename: "[name].js"
+    filename: "[name].js",
+    libraryTarget: "umd"
   },
   module: {
     rules: [
       {
         test: /.js$/,
         loader: "babel-loader",
-        include: [resolve("src")]
+        include: [resolve("src")],
+        options: {
+          presets: [
+            [
+              "@babel/preset-env",
+              {
+                targets: {
+                  node: true
+                }
+              }
+            ]
+          ]
+        }
       }
     ]
   },
+  // externals: _externals,
   resolve: {
     extensions: [".js"],
     alias: {
