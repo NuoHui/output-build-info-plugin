@@ -421,7 +421,7 @@
           t.plugin("emit", async (t, e) => {
             if (await this.gitUtil.checkIsGitRepository()) {
               const e = this.outputName,
-                n = {};
+                n = { env: this.env };
               (n.git = {
                 last_commit: await this.gitUtil.getLocalGitLatestCommit(),
                 current_branch: await this.gitUtil.getLocalCurrentBranch(),
