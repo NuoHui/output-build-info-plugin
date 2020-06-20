@@ -26,3 +26,7 @@ TODO
   }
 }
 ```
+
+## Changelog
+
+[Changelog](https://github.com/NuoHui/output-build-info-plugin/blob/master/CHANGELOG.md)。
