@@ -68,6 +68,6 @@
     "@babel/core": "^7.7.7"
   },
   "dependencies": {
-    "simple-git": "^2.6.0"
+    "simple-git": "^3.3.0"
   }
 }
